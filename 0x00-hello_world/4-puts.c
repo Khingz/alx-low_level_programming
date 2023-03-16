@@ -7,7 +7,7 @@
  *
  * Return: Always 0 (Success)
  */
-int maini(void)
+int main(void)
 {
 	char sent[] = "\"Programming is like building a multilingual puzzle";
 
