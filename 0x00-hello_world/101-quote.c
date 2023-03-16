@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <unistd.h>
 
 /**
  * main - Entry point
@@ -6,13 +6,10 @@
  * Return: Always 1 (Success)
  */
 int main(void)
-gi
-	char msg[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19"
-	char error[];
+{
+	char msg[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
-	msg 2> errorMsg;
-
-	printf("%s\n", errorMsg);
+	write(1, msg, 59);
 	
 	return (1);
 }
