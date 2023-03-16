@@ -1,8 +1,17 @@
 #include <stdio.h>
 
-int main(void)
+/**
+ * main - Entry point
+ *
+ *description: Prints output to the screen
+ *
+ * Return: Always 0 (Success)
+ */
+int maini(void)
 {
 	char sent[] = "\"Programming is like building a multilingual puzzle";
+
 	puts(sent);
-	return 0;
+
+	return (0);
 }
