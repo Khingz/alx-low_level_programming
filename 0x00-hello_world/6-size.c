@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-/** 
+/**
  * main - Entry point
  *
- * description: print size of var types
+ * description: print size of different  var types
  *
  * Return: Always 0 (Success)
  */
