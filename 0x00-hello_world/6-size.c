@@ -3,7 +3,7 @@
 /** 
  * main - Entry point
  *
- * description: print size of var
+ * description: print size of var types
  *
  * Return: Always 0 (Success)
  */
