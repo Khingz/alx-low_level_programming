@@ -13,5 +13,5 @@ int maini(void)
 
 	puts(sent);
 
-	return (0);
+	return 0;
 }
