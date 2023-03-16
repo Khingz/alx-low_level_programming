@@ -10,9 +10,9 @@
 
 int main(void)
 {
-	char[] = "with proper grammar, but the outcome is a piece of art,";
+	char msg[] = "with proper grammar, but the outcome is a piece of art,";
 	
-	printf("%c \n" char);
+	printf("%s \n", msg);
 
 	return (0);
 }
