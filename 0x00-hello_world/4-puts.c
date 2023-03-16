@@ -13,5 +13,5 @@ int main(void)
 
 	puts(sent);
 
-	return 0;
+	return (0);
 }
