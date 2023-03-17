@@ -19,11 +19,6 @@ int main(void)
 	/* your code goes there */
 	last_digit = n%10;
 
-	/**for (i = 0; i < 8; i++)
-	{
-		last_digit = n/10;
-	}*/
-
 	if (last_digit > 5 && n > 0)
 	{
 		printf("Last digit of %i is %i and is greater than 5\n", n, last_digit);
