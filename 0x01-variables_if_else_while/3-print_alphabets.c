@@ -11,11 +11,11 @@ int main(void)
 	char j;
 
 	for (j = 96; j < 123; j++)
-        {
-                if (j < 91 || (j > 96 && j < 123))
-                {
-                        putchar(j);
-                }
+	{
+		if (j < 91 || (j > 96 && j < 123))
+		{
+			putchar(j);
+		}
         }
 
 	for (i = 65; i < 91; i++)
