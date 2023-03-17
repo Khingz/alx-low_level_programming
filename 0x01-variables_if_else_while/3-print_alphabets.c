@@ -16,7 +16,7 @@ int main(void)
 		{
 			putchar(j);
 		}
-        }
+	}
 
 	for (i = 65; i < 91; i++)
 	{
