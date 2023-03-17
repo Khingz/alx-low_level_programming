@@ -7,12 +7,14 @@
  */
 int main(void)
 {
-	char x = 65;
+	char i;
 
-	while (x < 91 || (x > 96 && x < 123))
+	for (i = 65; i < 123; i++)
 	{
-		putchar(x);
-		x++;
+		if (i < 9 || (i > 97 && i < 123))
+		{
+			putchar(i);
+		}
 	}
 	putchar('\n');
 
