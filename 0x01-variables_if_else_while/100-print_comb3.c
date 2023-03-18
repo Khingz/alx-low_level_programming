@@ -17,11 +17,17 @@ int main(void)
 			if (i < j)
 			{
 				int x = 0;
+
 				putchar(i + '0');
 				putchar(j + '0');
 
 				while (x < 2)
 				{
+					if (i == 8 && j == 9)
+					{
+						break;
+					}
+
 					putchar(comma_space[x]);
 					x++;
 				}
