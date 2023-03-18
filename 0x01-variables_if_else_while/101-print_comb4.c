@@ -8,7 +8,6 @@
 int main(void)
 {
 	int i, j, k;
-	int comma_space[] = {44, 32};
 
 	for (i = 0; i < 10; i++)
 	{
@@ -18,20 +17,14 @@ int main(void)
 			{
 				if (i < j && j < k)
 				{
-					int x = 0;
-
 					putchar(i + '0');
 					putchar(j + '0');
 					putchar(k + '0');
 
-					while (x < 2)
+					if ((i == 7 && j == 8) && k == 9)
 					{
-						if ((i == 7 && j == 8) && k == 9)
-						{
-							break;
-						}
-						putchar(comma_space[x]);
-						x++;
+						putchar(44);
+						putchar(32);
 					}
 				}
 			}
