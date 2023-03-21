@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_alphabet_(x10) - Entry point
+ * print_alphabet_x10 - Entry point
  *
  * Return: void
  */
@@ -10,7 +10,7 @@ void print_alphabet_x10(void)
 	int i = 0;
 	int j;
 
-	while (i < 9)
+	while (i <= 9)
 	{
 		j = 97;
 
