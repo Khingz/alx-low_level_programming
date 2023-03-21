@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_to_98 - Entry point
@@ -9,33 +10,25 @@
  */
 void print_to_98(int n)
 {
-	if (n > 98)
+	if (n <= 98)
 	{
-		count_backward(n);
-	}
-	else if (n <= 98 && n >= 0)
-	{
-		count_forward(n);
-	}
-	else
-	{
-		count_negative(n);
-	}
-}
+		int i = n;
 
-void count_backward(int a)
-{
-	int x = a;
-
-	while (x > 98)
-	{
-		int digit_length = get_int_length(a);
-		int i;
-
-		while (i < digit_length)
+		while (i < 99)
 		{
-			_putchar(x % 10 + '0');
+			printf("%i, ", i);
+			i++;
 		}
-		if 
 	}
+	else if (n > 98)
+	{
+		int i = n;
+
+		while (i >= 98)
+		{
+			printf("%i, ", i);
+			i--;
+		}
+	}
+	printf("\n");
 }
