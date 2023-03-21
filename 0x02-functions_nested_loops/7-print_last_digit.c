@@ -10,7 +10,12 @@
 int print_last_digit(int x)
 {
 	int last_digit;
-	
+
+	if ( x == -2147483648)
+	{
+		return (8);
+	}
+
 	if (x < 0)
 	{
 		x = x * -1;
