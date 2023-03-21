@@ -1,20 +1,19 @@
-#include <main.h>
+#include "main.h"
 
 /**
  * main - Entry point
  *
  * Return: Always 0 (Success)
  */
-int main(void)
+void print_alphabet(void)
 {
 	int i = 97;
 
-	while (i > 123)
+	while (i < 123)
 	{
 		_putchar(i);
+		i++;
 	}
 	
 	_putchar('\n');
-
-	return (0);
 }
