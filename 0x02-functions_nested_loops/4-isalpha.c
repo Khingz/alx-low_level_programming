@@ -1,7 +1,7 @@
 #include <ctype.h>
 
 /**
- * _isalpaha - Entry point
+ * _isalpha - Entry point
  *
  * @c: integer to be checked
  *
