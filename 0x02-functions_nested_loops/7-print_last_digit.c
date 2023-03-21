@@ -11,8 +11,9 @@ int print_last_digit(int x)
 {
 	int last_digit;
 
-	if ( x == -2147483648)
+	if (x == -2147483648)
 	{
+		_putchar(8 + '0');
 		return (8);
 	}
 
