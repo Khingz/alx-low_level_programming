@@ -15,15 +15,18 @@ int largest_number(int a, int b, int c)
 	if (a > b && a > c)
 	{
 		largest = a;
+		return (largest);
 	}
 	else if (b > a && b > c)
 	{
 		largest = b;
+		return (largest);
 	}
-	else
+	else if (c > a && c > b)
 	{
 		largest = c;
+		return (largest);
 	}
 
-	return (largest);
+	return (1);
 }
