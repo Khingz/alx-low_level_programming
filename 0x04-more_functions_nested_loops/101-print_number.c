@@ -2,13 +2,12 @@
 
 /**
  * print_number - Entry point
- *
  * @n: integer to print
- * @a: checks int length
+ *
  * Return: Always 0 (Success)
  */
 
-int get_digit_length(int a);
+int digit_length(int n);
 
 void print_number(int n)
 {
@@ -20,7 +19,7 @@ void print_number(int n)
 		n = n * (-1);
 	}
 
-	length = (get_digit_length(n));
+	length = digit_length(n);
 	divisor = 1;
 	x = 0;
 	while (x < length - 1)
@@ -43,22 +42,23 @@ void print_number(int n)
 	}
 }
 
+
 /**
- * get_digit_length - Entry point
+ * digit_length - length of digit
  *
- * @a: get int to check length
+ * @n: get int to che
  *
  * Return: Always 0 (Success)
  */
-int get_digit_length(int a)
+int digit_length(int n)
 {
 	int length;
 
 	length = 1;
-	while ((a / 10))
+	while ((n / 10))
 	{
 		length++;
-		a /= 10;
+		n /= 10;
 	}
 	return (length);
 }
