@@ -10,6 +10,18 @@ void print_line(int n)
 {
 	int x;
 
-	x
-	return (0);
+	x = 0;
+	if (n < 1)
+	{
+		_putchar('\n');
+	}
+	else
+	{
+		while (x < n)
+		{
+			_putchar('_');
+			x++;
+		}
+		_putchar('\n');
+	}
 }
