@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main - Entry point
+ * swap_int - Entry point
  *
  * @a: pointer 1
  * @b: pointer 2
