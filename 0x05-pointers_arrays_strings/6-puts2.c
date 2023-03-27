@@ -1,3 +1,4 @@
+#include <string.h>
 #include <stddef.h>
 #include "main.h"
 
@@ -13,7 +14,7 @@ void puts2(char *str)
 
 	for (; *str != '\0'; str += 2)
 	{
-		if (str == NULL)
+		if (str == NULL || str > (str + strlen(str)))
 		{
 			break;
 		}
