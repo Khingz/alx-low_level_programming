@@ -22,8 +22,8 @@ int _strcmp(char *s1, char *s2)
 		else
 		{
 			check = (s1[i] - s2[i]);
-			break;
+			return (check);
 		}
 	}
-	return (check);
+	return (0);
 }
