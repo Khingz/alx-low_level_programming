@@ -1,25 +1,29 @@
 /**
- * _strcat - Entry point
+ * _strncat - Entry point
  *
  * @dest: string concat destination
  * @src: concat source
+ * @n: numberof source bytes
  *
  * Return: Always 0 (Success)
  */
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
 	char *tmp = dest;
+	int i;
 
 	while (*tmp)
 	{
-		*tmp++;
+		tmp++;
 	}
 
-	while (*src)
+	i = 0;
+	while (*src && i < n)
 	{
 		*tmp = *src;
-		*tmp++;
-		*src++;
+		tmp++;
+		src++;
+		i++;
 	}
 	*tmp = '\0';
 	return (dest);
