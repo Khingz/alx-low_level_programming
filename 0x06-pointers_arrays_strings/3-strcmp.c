@@ -12,16 +12,16 @@ int _strcmp(char *s1, char *s2)
 	int i;
 
 	check = i = 0;
-	while (*s2 != '\0')
+	while (*s2 && *s1)
 	{
-		if (s1[i] - *s2 == 0)
+		if (*s1 - *s2 == 0)
 		{
 			s2++;
-			i++;
+			s1++;
 		}
 		else
 		{
-			check = (s1[i] - s2[i]);
+			check = *s1 - *s2;
 			return (check);
 		}
 	}
