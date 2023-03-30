@@ -8,29 +8,21 @@
 char *leet(char *str)
 {
 	char *tmp;
+	int i;
+	char *letters = "aAeEoOtTlL";
+	char *code = "4433007711";
 
 	tmp = str;
 	while (*tmp)
 	{
-		if (*tmp == 65 || *tmp == 97)
+		i = 0;
+		while (i < 10)
 		{
-			*tmp = 52;
-		}
-		if (*tmp == 69 || *tmp == 101)
-		{
-			*tmp = 51;
-		}
-		if (*tmp == 79 || *tmp == 111)
-		{
-			*tmp = 48;
-		}
-		if (*tmp == 84 || *tmp == 116)
-		{
-			*tmp = 55;
-		}
-		if (*tmp == 76 || *tmp == 108)
-		{
-			*tmp = 49;
+			if (*tmp == letters[i])
+			{
+				*tmp = code[i];
+			}
+			i++;
 		}
 		tmp++;
 	}
