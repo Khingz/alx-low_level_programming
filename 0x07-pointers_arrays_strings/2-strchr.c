@@ -1,12 +1,10 @@
-#include <stddef.h>
-#include <stdlib.h>
-
 /**
  * _strchr - Entry point
  *
  * @s: string to be searched
  * @c: character to be searched
- * Return: Always 0 (Success)
+ * Return: Pointer to the first occurrence of the character in the string,
+ *         or NULL if the character is not found
  */
 char *_strchr(char *s, char c)
 {
@@ -19,5 +17,5 @@ char *_strchr(char *s, char c)
 		s++;
 	}
 
-	return (NULL);
+	return (0);
 }
