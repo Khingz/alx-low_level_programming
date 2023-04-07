@@ -1,4 +1,4 @@
-int sqrt_helper(int n,int lower_bound, int upper_bound);
+int sqrt_helper(int n, int lower_bound, int upper_bound);
 
 /**
  * _sqrt_recursion - Entry point
