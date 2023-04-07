@@ -1,4 +1,4 @@
-int sqrt_helper(int n, int upper_bound);
+int sqrt_helper(int n,int lower_bound, int upper_bound);
 
 /**
  * _sqrt_recursion - Entry point
@@ -18,7 +18,7 @@ int _sqrt_recursion(int n)
 	{
 		return (n);
 	}
-	return (sqrt_helper(n, n));
+	return (sqrt_helper(n, 1, n));
 }
 
 /**
@@ -26,15 +26,16 @@ int _sqrt_recursion(int n)
  *
  * @n: int to check square root
  * @upper_bound: int upper bound to be checked
+ * @lower_bound: loer boound
  *
  * Return: Always 0 (Success)
  */
-int sqrt_helper(int n, int upper_bound)
+int sqrt_helper(int n, int lower_bound, int upper_bound)
 {
-	long double  middle_number = upper_bound / 2;
+	long double  middle_number = (upper_bound + lower_bound) / 2;
 	long double sqrt = middle_number * middle_number;
 
-	if (upper_bound < 2)
+	if (lower_bound > upper_bound)
 	{
 		return (-1);
 	}
@@ -44,9 +45,9 @@ int sqrt_helper(int n, int upper_bound)
 		return (middle_number);
 	}
 
-	if (sqrt >  n)
+	if (sqrt > n)
 	{
-		return (sqrt_helper(n, upper_bound - 1));
+		return (sqrt_helper(n, lower_bound, middle_number - 1));
 	}
-	return (-1);
+	return (sqrt_helper(n, middle_number + 1, upper_bound));
 }
