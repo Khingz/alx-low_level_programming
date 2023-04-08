@@ -2,14 +2,14 @@
 
 /**
  * _puts - Entry point
- * @str: string to be reversed
+ * @s: string to be reversed
  * Return: void
  */
-void _puts(char *str)
+void _puts(char *s)
 {
-	for (; *str != '\0'; str++)
+	for (; *s != '\0'; s++)
 	{
-		_putchar(*str);
+		_putchar(*s);
 	}
 	_putchar('\n');
 }
