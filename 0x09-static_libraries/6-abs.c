@@ -3,11 +3,11 @@
 /**
  * _abs - Entry point
  *
- * @c: integer to conver to abs
+ * @n: integer to conver to abs
  *
  * Return: Always abs value (Success)
  */
-int _abs(int c)
+int _abs(int n)
 {
-	return (abs(c));
+	return (abs(n));
 }
