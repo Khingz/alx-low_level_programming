@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int calculate_coin(int n);
+int calculate_coin(long double cents);
 
 /**
  * main - Entry point
@@ -14,7 +14,9 @@ int calculate_coin(int n);
 
 int main(int argc, char *argv[])
 {
-	int coin, cents;
+	int coin;
+
+	long double cents;
 
 	if (argc != 2)
 	{
@@ -23,14 +25,13 @@ int main(int argc, char *argv[])
 	}
 
 	cents = atoi(argv[1]);
-	coin = 0;
+	coin = calculate_coin(cents);
 
 	if (cents < 0 || cents == 0)
 	{
 		printf("%i\n", coin);
+		return (1);
 	}
-
-	coin = calculate_coin(cents);
 
 	printf("%i\n", coin);
 	return (0);
@@ -43,9 +44,14 @@ int main(int argc, char *argv[])
  *
  * Return: an int, number of coins
  */
-int calculate_coin(int cents)
+int calculate_coin(long double cents)
 {
 	int coin = 0;
+
+	if (cents < 0)
+	{
+		return (0);
+	}
 
 	while (cents >= 25)
 	{
