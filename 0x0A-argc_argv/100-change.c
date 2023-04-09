@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	cents = atoi(argv[1]);
 	coin = 0;
 
-	if (cents < 1)
+	if (cents < 0 || cents == 0)
 	{
 		printf("%i\n", coin);
 	}
