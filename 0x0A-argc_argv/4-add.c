@@ -25,18 +25,16 @@ int main(int argc, char *argv[])
 	i = 1;
 	while (i < argc)
 	{
-		if (!isdigit(*argv[i]))
+		if (isdigit(*argv[i]))
+		{
+			sum += atoi(argv[i]);
+			i++;
+		}
+		else
 		{
 			printf("Error\n");
 			return (1);
 		}
-		if (atoi(argv[i]) < 0)
-		{
-			printf("Error\n");
-			return (1);
-		}
-		sum += atoi(argv[i]);
-		i++;
 	}
 	printf("%i\n", sum);
 	return (0);
