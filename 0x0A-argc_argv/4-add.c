@@ -15,14 +15,14 @@ int main(int argc, char *argv[])
 {
 	int i, sum;
 
+	sum = 0;
 	if (argc < 2)
 	{
-		printf("0\n");
+		printf("%i\n", sum);
 		return (1);
 	}
 
 	i = 1;
-	sum = 0;
 	while (i < argc)
 	{
 		if (!isdigit(*argv[i]))
