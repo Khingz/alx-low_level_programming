@@ -1,6 +1,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+int check_buffer(char *s1, char *s2);
 /**
  * str_concat - concatenates 2 strings
  *
@@ -15,12 +16,12 @@ char *str_concat(char *s1, char *s2)
 	char *tmp;
 	int i, j;
 	int buffer_size;
-	
-	if (s1 == NULL || s2 == NULL)
+
+	if (s1 == NULL && s2 == NULL)
 	{
 		return (NULL);
 	}
-	buffer_size = strlen(s1) + strlen(s2);
+	buffer_size = check_buffer(s1, s2);
 	tmp = malloc(sizeof(char) * buffer_size + 1);
 	if (tmp == NULL)
 	{
@@ -41,4 +42,29 @@ char *str_concat(char *s1, char *s2)
 	}
 	tmp[i] = '\0';
 	return (tmp);
+}
+
+/**
+ * check_buffer - check buffer size
+ * @s1: str 1;
+ * @s2: str 2;
+ * Return: int
+ */
+int check_buffer(char *s1, char *s2)
+{
+	int buffer;
+
+	if (s1 == NULL)
+	{
+		buffer = strlen(s2);
+	}
+	else if (s2 == NULL)
+	{
+		buffer = strlen(s1);
+	}
+	else
+	{
+		buffer = strlen(s1) + strlen(s2);
+	}
+	return (buffer);
 }
