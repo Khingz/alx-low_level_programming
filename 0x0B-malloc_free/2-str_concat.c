@@ -16,11 +16,12 @@ char *str_concat(char *s1, char *s2)
 	char *tmp;
 	int i, j;
 	int buffer_size;
-	char *p = "";
 
 	if (s1 == NULL && s2 == NULL)
 	{
-		return (p);
+		tmp = malloc(sizeof(char) * 1);
+		*tmp = '\0';
+		return (tmp);
 	}
 	buffer_size = check_buffer(s1, s2);
 	tmp = malloc(sizeof(char) * buffer_size + 1);
