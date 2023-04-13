@@ -1,4 +1,5 @@
 #include <stddef.h>
+#include <string.h>
 #include <stdlib.h>
 
 /**
@@ -10,7 +11,6 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	char *arr;
-	unsigned int i;
 
 	if (nmemb == 0 || size == 0)
 	{
@@ -21,11 +21,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	{
 		return (NULL);
 	}
-	i = 0;
-	while (i < nmemb)
-	{
-		arr[i] = 0;
-		i++;
-	}
+	memset(arr, 0, nmemb * size);
 	return (arr);
 }
