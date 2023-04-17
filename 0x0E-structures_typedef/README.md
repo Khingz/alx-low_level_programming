@@ -1,0 +1,1 @@
+ALX Struct and typedef
