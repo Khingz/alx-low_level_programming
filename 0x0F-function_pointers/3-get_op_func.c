@@ -2,6 +2,11 @@
 #include <string.h>
 #include "3-calc.h"
 
+/**
+ *get_op_func - get op for calc
+ *@s: op sign
+ *Return: pointer to func
+ */
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
@@ -14,8 +19,8 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int i;
 
-    	i = 0;
-	while (i < 6)
+	i = 0;
+	while (ops[i].op != NULL)
 	{
 		if (strcmp(s, ops[i].op) == 0)
 		{
