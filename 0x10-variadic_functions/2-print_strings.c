@@ -21,20 +21,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		s = va_arg(str, char *);
 		if (s == NULL)
 		{
-			printf("(nil)\n");
-			exit(1);
-		}
-		i++;
-	}
-	va_end(str);
-	va_start(str, n);
-	i = 0;
-	while (i < n)
-	{
-		s = va_arg(str, char *);
-		if (s == NULL)
-		{
-			printf("(nill)");
+			printf("(nil)");
 		}
 		else
 		{
