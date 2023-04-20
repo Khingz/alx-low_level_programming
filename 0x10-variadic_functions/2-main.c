@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include "variadic_functions.h"
 
 /**
@@ -7,6 +8,6 @@
  */
 int main(void)
 {
-    print_strings(", ", 2, "Jay", "Django");
+    print_strings(NULL, 2, "Hello", "Django");
     return (0);
 }

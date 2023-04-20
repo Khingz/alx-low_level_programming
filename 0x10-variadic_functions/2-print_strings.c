@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <stdlib.h>
 #include <stddef.h>
 #include <stdio.h>
 /**
@@ -13,6 +14,19 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_list str;
 	char *s;
 
+	va_start(str, n);
+	i = 0;
+	while (i < n)
+	{
+		s = va_arg(str, char *);
+		if (s == NULL)
+		{
+			printf("(nill)\n");
+			exit(1);
+		}
+		i++;
+	}
+	va_end(str);
 	va_start(str, n);
 	i = 0;
 	while (i < n)
