@@ -1,6 +1,10 @@
 #ifndef LIST_H
 #define LIST_H
 
+/* prototypes definition */
+int _putchar(char c);
+size_t print_list(const list_t *h);
+
 /**
  * struct list_s - singly linked list
  * @str: string - (malloc'ed string)
