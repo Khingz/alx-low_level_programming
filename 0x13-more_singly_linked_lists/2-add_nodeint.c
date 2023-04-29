@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * listint_t - add a node to the begining of a list
+ * add_nodeint - add a node to the begining of a list
  * @head: head of node
  * @n: value of node->n
  * Return: pointer to note

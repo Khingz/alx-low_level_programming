@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_noteint_end - add a node to the end of a string
+ * add_nodeint_end - add a node to the end of a string
  * @head: head of list
  * @n: int to add
  * Return: pointer to new list
@@ -19,7 +19,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	new_el->next = NULL;
 	if (*head == NULL)
 	{
-		*head =new_el;
+		*head = new_el;
 		return (new_el);
 	}
 	tmp = *head;
