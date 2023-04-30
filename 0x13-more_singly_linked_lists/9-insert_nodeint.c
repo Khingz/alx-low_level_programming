@@ -41,6 +41,5 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		indx++;
 		tmp_head = tmp_head->next;
 	}
-	free(new_el);
 	return (NULL);
 }
