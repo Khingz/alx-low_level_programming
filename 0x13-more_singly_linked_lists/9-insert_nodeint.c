@@ -24,22 +24,22 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (NULL);
 	}
 	new_el->n = n;
-	if (n == 0)
+	if (idx == 0)
 	{
 		new_el->next = *head;
 		*head = new_el;
 		return (new_el);
 	}
-	while (indx <= idx - 1)
+	while (tmp_head != NULL)
 	{
-		if (tmp_head == NULL || tmp_head->next == NULL)
+		if (indx == (idx - 1))
 		{
-			return (NULL);
+			new_el->next = tmp_head->next;
+			tmp_head->next = new_el;
+			return (new_el);
 		}
 		indx++;
 		tmp_head = tmp_head->next;
 	}
-	new_el->next = tmp_head->next;
-	tmp_head->next = new_el;
-	return (new_el);
+	return (NULL);
 }
