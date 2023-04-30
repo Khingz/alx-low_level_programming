@@ -24,10 +24,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (NULL);
 	}
 	new_el->n = n;
-	if (*head == NULL && n == 0)
+	if (n == 0)
 	{
+		new_el->next = *head;
 		*head = new_el;
-		new_el->next = NULL;
+		return (new_el);
 	}
 	while (tmp_head != NULL)
 	{
