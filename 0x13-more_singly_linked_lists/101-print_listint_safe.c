@@ -1,33 +1,81 @@
 #include "lists.h"
 
+size_t check_loop(const listint_t *head);
 /**
- * print_listint_safe
+ * print_listint_safe - prints linked list safe
  * @head: pointer to first note
  * Return: number of node
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	listint_t *tmp;
-	size_t count;
+	size_t unique_nodes, count;
 
-	if (head != NULL)
+	if (head == NULL)
 	{
 		exit(98);
 	}
-	tmp = head;
+	unique_nodes = check_loop(head);
 	count = 0;
-	while (tmp != NULL)
+	if (unique_nodes == 0)
 	{
-		if (count == 0)
+		while (head != NULL)
 		{
-			printf("[%p], %i", *head, tmp->n);
 			count++;
-			tmp= tmp->next;
-			continue;
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
 		}
-		printf("[%p] %i", *tmp, tmp->n);
-		count++;
-		tmp = tmp->next;
+		return (count);
 	}
+	for (; count < unique_nodes; count++)
+	{
+		printf("[%p] %d\n", (void *)head, head->n);
+		head = head->next;
+	}
+	printf("-> [%p] %d\n", (void *)head, head->n);
 	return (count);
 }
+
+/**
+ * check_loop - checks unique node len
+ * @head: pointer to the head of the llist
+ * Return: number of node
+ */
+size_t check_loop(const listint_t *head)
+{
+	const listint_t *slow, *fast;
+	size_t count;
+
+	if (head == NULL || head->next == NULL)
+		return (0);
+
+	slow = head->next;
+	fast = (head->next)->next;
+	count = 1;
+	while (fast)
+	{
+		if (slow == fast)
+		{
+			slow = head;
+			while (slow != fast)
+			{
+				count++;
+				slow = slow->next;
+				fast = fast->next;
+			}
+
+			slow = slow->next;
+			while (slow != fast)
+			{
+				count++;
+				slow = slow->next;
+			}
+
+			return (count);
+		}
+
+		slow = slow->next;
+		fast = (fast->next)->next;
+	}
+	return (0);
+}
+
