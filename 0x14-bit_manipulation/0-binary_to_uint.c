@@ -10,18 +10,19 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int num, pow;
 	int len;
 
+	num = 0;
 	if (*b == '\0' || b == NULL)
 	{
-		return (0);
+		return (num);
 	}
 	pow = 1;
-	num = 0;
 	len = strlen(b) - 1;
 	while (len  >= 0)
 	{
 		if (b[len] != '0' && b[len] != '1')
 		{
-			return (0);
+			num = 0;
+			return (num);
 		}
 		num += (b[len] - 48) * pow;
 		pow = pow * 2;
