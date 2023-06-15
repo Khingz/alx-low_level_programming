@@ -7,21 +7,16 @@ int main(void)
 	int num, i, j, product;
 
 	num = 0;
-	i = j = 999;
-	while (i > 0)
-	{
-		while (j > 0)
-		{
+	for (i = 999; i >= 100; i--) {
+		for (j = 999; j >= 100; j--) {
 			product = i * j;
-			if (product > num && isPalindrome(product))
-			{
+			if (product > num && isPalindrome(product)) {
 				num = product;
 			}
-			j--;
 		}
-		i--;
 	}
 	printf("%d", num);
+	return (0);
 }
 
 int isPalindrome(int num) {
