@@ -1,3 +1,3 @@
 #!/bin/bash
-gcc -fPIC -c inject.c
-gcc -shared -o libinject.so *inject.o
+gcc -fPIC -c inject.c -o inj.o
+gcc -shared -o libinj.so inj.o
