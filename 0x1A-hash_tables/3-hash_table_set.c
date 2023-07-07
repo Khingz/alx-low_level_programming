@@ -15,7 +15,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (ht == NULL || key == NULL || value == NULL || *key == '\0')
 		return (0);
-
 	copy_val = strdup(value);
 	if (copy_val == NULL)
 		return (0);
@@ -36,14 +35,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 	new->key = strdup(key);
+	if (new->key == NULL)
+	{
+		free(new);
+		return (0);
+	}
 	new->value = copy_val;
 	if (ht->array[index] == NULL)
-	{
 		new->next = NULL;
-		ht->array[index] = new;
-		return (1);
-	}
-	new->next = ht->array[index];
+	else
+		new->next = ht->array[index];
 	ht->array[index] = new;
 	return (1);
 }
