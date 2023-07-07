@@ -41,10 +41,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 	new->value = copy_val;
-	if (ht->array[index] == NULL)
-		new->next = NULL;
-	else
-		new->next = ht->array[index];
+	new->next = ht->array[index];
 	ht->array[index] = new;
 	return (1);
 }
