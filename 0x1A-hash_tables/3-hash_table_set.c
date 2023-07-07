@@ -1,7 +1,8 @@
 #include "hash_tables.h"
 
 /**
- * ht - hashtable to insert
+ * hash_table_set - insert into a hashtable
+ * @ht:  hashtable to insert
  * @key: hash key
  * @value: Value
  * Return: 1 if succedd or 0 if faiilure
@@ -17,7 +18,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	copy_val = strdup(value);
 	if (copy_val == NULL)
-                return (0);
+		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
 	for (i = index; ht->array[i]; ht->array[i] = ht->array[i]->next)
 	{
@@ -26,7 +27,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			free(ht->array[i]->value);
 			ht->array[i]->value = copy_val;
 			return (1);
-		}	
+		}
 	}
 	new = malloc(sizeof(hash_node_t));
 	if (new == NULL)
