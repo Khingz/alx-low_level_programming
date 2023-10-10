@@ -1,7 +1,5 @@
 #include "search_algos.h"
 
-void print_arr(int *arr, size_t left, size_t right);
-
 /**
  * jump_search - performs jump search alogrithm
  * @array: array to search
@@ -13,7 +11,7 @@ int jump_search(int *array, size_t size, int value)
 {
 	size_t lower, step, x, i;
 
-	if (!array && size == 0)
+	if (!array || size == 0)
 		return (-1);
 	step = (size_t)sqrt(size);
 	for (i = 0; i < size && array[i] < value; i += step)

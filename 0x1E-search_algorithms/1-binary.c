@@ -12,7 +12,7 @@ void print_arr(int *arr, size_t left, size_t right);
  */
 int binary_search(int *array, size_t size, int value)
 {
-	if (!array)
+	if (!array || size == 0)
 		return (-1);
 
 	return (binary_helper(array, 0, (size - 1), value));
