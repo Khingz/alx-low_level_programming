@@ -35,12 +35,11 @@ int binary_helper(int *arr, size_t left, size_t right, int value)
 		return (-1);
 	print_arr(arr, left, right);
 	mid = left + (right - left) / 2;
-	if (arr[mid] == value)
+	if ((mid == 0 || arr[mid - 1] < value) && arr[mid] == value)
 	{
-		result = mid;
-		return (binary_helper(arr, left, (mid - 1), value));
+		return (mid);
 	}
-	if (arr[mid] > value)
+	if (arr[mid] >= value)
 	{
 		return (binary_helper(arr, left, (mid - 1), value));
 	}
