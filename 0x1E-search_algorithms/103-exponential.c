@@ -13,16 +13,19 @@ void print_arr(int *arr, size_t left, size_t right);
  */
 int exponential_search(int *array, size_t size, int value)
 {
-	size_t bound;
+	size_t bound, right;
 
 	if (!array || size == 0)
 		return (-1);
 	bound = 1;
 	while (bound < size && array[bound] < value)
 	{
+		printf("Value checked array[%ld] = [%d]\n", bound, array[bound]);
 		bound *= 2;
 	}
-	return binary_helper(array, value, bound/2, min(bound + 1, size));
+	right = bound < size ? bound : size - 1;
+	printf("Value found between indexes [%ld] and [%ld]\n", bound / 2, right);
+	return (binary_helper(array, value, bound / 2, right));
 }
 
 
@@ -37,21 +40,24 @@ int exponential_search(int *array, size_t size, int value)
  */
 int binary_helper(int *arr, int value, size_t left, size_t right)
 {
-        size_t mid;
+	size_t mid;
 
-        if (left > right)
-                return (-1);
-        mid = left + (right - left) / 2;
-        if (arr[mid] == value)
-                return (mid);
-        if (arr[mid] > value)
-        {
-                return (binary_helper(arr, left, (mid - 1), value));
-        }
-        else
-        {
-                return (binary_helper(arr, (mid + 1), right, value));
-        }
+	if (arr == NULL)
+		return (-1);
+	if (left > right)
+		return (-1);
+	print_arr(arr, left, right);
+	mid = left + (right - left) / 2;
+	if (arr[mid] == value)
+		return (mid);
+	if (arr[mid] > value)
+	{
+		return (binary_helper(arr, value, left, (mid)));
+	}
+	else
+	{
+		return (binary_helper(arr, value, (mid + 1), right));
+	}
 }
 
 
@@ -63,16 +69,16 @@ int binary_helper(int *arr, int value, size_t left, size_t right)
  */
 void print_arr(int *arr, size_t left, size_t right)
 {
-        size_t i;
+	size_t i;
 
-        printf("Searching in array: ");
-        i = left;
-        while (i <= right)
-        {
-                if (i == right)
-                        printf("%d\n", arr[i]);
-                else
-                        printf("%d, ", arr[i]);
-                i++;
-        }
+	printf("Searching in array: ");
+	i = left;
+	while (i <= right)
+	{
+		if (i == right)
+			printf("%d\n", arr[i]);
+		else
+			printf("%d, ", arr[i]);
+		i++;
+	}
 }
