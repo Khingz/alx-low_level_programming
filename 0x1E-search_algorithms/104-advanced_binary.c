@@ -29,7 +29,7 @@ int advanced_binary(int *array, size_t size, int value)
  */
 int binary_helper(int *arr, size_t left, size_t right, int value)
 {
-	size_t mid, result;
+	size_t mid;
 
 	if (left > right)
 		return (-1);
@@ -47,7 +47,6 @@ int binary_helper(int *arr, size_t left, size_t right, int value)
 	{
 		return (binary_helper(arr, (mid + 1), right, value));
 	}
-	return (result);
 }
 
 
