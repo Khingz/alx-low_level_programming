@@ -41,7 +41,7 @@ int binary_helper(int *arr, size_t left, size_t right, int value)
 	}
 	if (arr[mid] >= value)
 	{
-		return (binary_helper(arr, left, (mid - 1), value));
+		return (binary_helper(arr, left, (mid), value));
 	}
 	else
 	{
